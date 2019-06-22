@@ -1,0 +1,23 @@
+{
+	"name": "AmazonS3SourceFileStore1",
+	"properties": {
+		"description": "Connection to your source data store.",
+		"linkedServiceName": {
+			"referenceName": "linkedService1s3",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"folder": {
+				"type": "String"
+			}
+		},
+		"type": "AmazonS3Object",
+		"typeProperties": {
+			"bucketName": {
+				"value": "@dataset().folder",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
